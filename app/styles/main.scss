@@ -1,0 +1,77 @@
+$iconSpritePath: "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+$FontAwesomePath: "../bower_components/font-awesome/font";
+
+@import "bootstrap-sass/lib/bootstrap";
+@import "font-awesome/scss/font-awesome";
+
+$primaryColor: #e74c3c;
+$secondaryColor: #bdc3c7;
+$primaryAccentColor: #ecf0f1;
+$secondaryAccentColor: #162d38;
+
+body {
+  font-size: 10pt;
+  background-color: $primaryColor;
+  color: $primaryAccentColor;
+}
+
+body .container {
+  background-color: $secondaryColor;
+  color: $secondaryAccentColor;
+}
+
+.container {
+  padding-bottom: 80px;
+}
+
+body .aboutMe {
+  color: $primaryAccentColor;
+}
+
+.row.odd {
+  background-color: white;
+}
+
+.aboutMe {
+  padding-top: 20px;
+  border-bottom: lightgray;
+  border-bottom-width: thin;
+  border-bottom-style: solid;
+  background-color: $primaryColor;
+}
+
+.aboutMe h1 {
+  margin-top: 0;
+}
+
+.experience {
+  margin-bottom: 20px;
+}
+
+.experience:first-child, .entry:first-child {
+  margin-top: 18px;
+}
+
+hr {
+  border-top: none;
+  border-bottom-color: $secondaryAccentColor;
+  border-bottom-width: thin;
+}
+
+.entry:last-child > hr {
+  border: none;
+}
+
+.tags li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.tags h6 {
+  margin: 0;
+}
+
+.into-margin, .avatar {
+  margin-left: -25px;
+}
