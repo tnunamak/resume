@@ -10,7 +10,8 @@
     "angular-resource": "PatternConsulting/bower-angular#1.1.5",
     "angular-cookies": "PatternConsulting/bower-angular#1.1.5",
     "angular-sanitize": "PatternConsulting/bower-angular#1.1.5",
-    "font-awesome": "~3.2.1"
+    "font-awesome": "~3.2.1",
+    "markdown": "~0.5.0"
   },
   "devDependencies": {
     "angular-mocks": "PatternConsulting/bower-angular#1.1.5",
