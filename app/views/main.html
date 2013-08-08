@@ -12,11 +12,11 @@
                 <h3> {{ resume.experiences[0].title | uppercase }} </h3>  <!-- todo capitalize -->
             </div>
             <div class="span4">
-            <span style="float: right; text-align: right">
-                {{ resume.email }} <br> {{ resume.phone }} <br>
-                <!-- {{ resume.website }} -->
-            </span>
-        </div>
+                <span style="float: right; text-align: right">
+                    <a href="mailto:{{resume.email}}" target="_blank">{{ resume.email }}</a> <br> {{ resume.phone }} <br>
+                    <!-- {{ resume.website }} -->
+                </span>
+            </div>
         </div>
         <div class="row-fluid">
             <div class="span12">
