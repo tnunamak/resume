@@ -43,7 +43,11 @@
             <h5> {{ experience.company }} </h5>
 
             <div ng-bind-html-unsafe="experience.summary"></div>
-            <div ng-bind-html-unsafe="experience.responsibilities | markdown"></div>
+
+            <div ng-click="experience.editing = !experience.editing"
+                 ng-hide="experience.editing" ng-bind-html-unsafe="experience.responsibilities | markdown"></div>
+            <textarea ng-blur="experience.editing = !experience.editing"
+                 ng-show="experience.editing" type="text" ng-model="experience.responsibilities"/>
             <hr>
         </div>
     </div>
@@ -112,3 +116,8 @@
     </div>
 </div>
 
+<footer class="row-fluid">
+    <div class="span10 offset1">
+        <a class="pull-right" ng-click="editMode = !editMode">toggle admin</a>
+    </div>
+</footer>

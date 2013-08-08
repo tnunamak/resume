@@ -12,6 +12,20 @@ $secondaryColor: #bdc3c7;
 $primaryAccentColor: #ecf0f1;
 $secondaryAccentColor: #162d38;
 
+input, textarea {
+  display: block;
+  width: 100%;
+}
+
+textarea {
+  min-height: 300px;
+}
+
+a {
+  /* Any <a> tags with no href need this */
+  cursor: pointer;
+}
+
 body {
   //font-family: 'Open Sans', sans-serif;
   font-family: 'Lato', sans-serif;
@@ -30,8 +44,8 @@ body .container {
   color: $secondaryAccentColor;
 }
 
-.container {
-  padding-bottom: 80px;
+.container > div:last-of-type {
+  margin-bottom: 80px;
 }
 
 body .aboutMe {
