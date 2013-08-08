@@ -38,7 +38,7 @@
             <h4> {{ experience.title }} </h4>
             <ul class="tags pull-right">
                 <li ng-repeat="technology in experience.technologies">
-                    <h6><span ng-if="!$first">·</span> {{ technology }}</h6></li>
+                    <h6><span ng-if="!$first" class="separator">·</span> {{ technology }}</h6></li>
             </ul>
             <h5> {{ experience.company }} </h5>
 
@@ -97,7 +97,7 @@
 
             <ul class="tags pull-right">
                 <li ng-repeat="technology in project.technologies">
-                    <h6><span ng-if="!$first">·</span> {{ technology }}</h6></li>
+                    <h6><span ng-if="!$first" class="separator">·</span> {{ technology }}</h6></li>
             </ul>
 
             <!--<h5> {{ project.tagLine }} </h5>-->

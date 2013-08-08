@@ -78,7 +78,11 @@ hr {
 
 .tags li {
   display: inline-block;
-  margin-right: 5px;
+}
+
+.tags .separator {
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 .tags h6 {
