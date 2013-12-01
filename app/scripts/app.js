@@ -7,6 +7,10 @@ angular.module('resumeApp', ['ngSanitize'])
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/sort', {
+        templateUrl: 'views/sort.html',
+        controller: 'SortCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

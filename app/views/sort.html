@@ -1,0 +1,14 @@
+<div class="row-fluid">
+    <div class="span8">
+        <h2>Sorting Demo</h2>
+
+        <select name="sortType" id="sortType" ng-model="selectedAlgorithm" ng-options="algorithm for algorithm in algorithms">
+        </select>
+        <button ng-click="sort()">Sort</button>
+
+        <br>
+        Before: {{ unsorted }} <br>
+        After: {{ sorted }} <br>
+        <span ng-show="time >= 0">{{ time }}ms</span>
+    </div>
+</div>
