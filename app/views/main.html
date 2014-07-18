@@ -20,7 +20,7 @@
         </div>
         <div class="row-fluid">
             <div class="span12">
-                <p><div ng-bind-html-unsafe="resume.summary | markdown"></div></p>
+                <p ng-bind-html-unsafe="resume.summary | markdown"></p>
             </div>
         </div>
     </div>
@@ -42,10 +42,10 @@
             </ul>
             <h5> {{ experience.company }} </h5>
 
-            <div ng-bind-html-unsafe="experience.summary"></div>
+            <p ng-bind-html-unsafe="experience.summary"></p>
 
-            <div ng-click="experience.editing = !experience.editing"
-                 ng-hide="experience.editing" ng-bind-html-unsafe="experience.responsibilities | markdown"></div>
+            <p ng-click="experience.editing = !experience.editing"
+                 ng-hide="experience.editing" ng-bind-html-unsafe="experience.responsibilities | markdown"></p>
             <textarea ng-blur="experience.editing = !experience.editing"
                  ng-show="experience.editing" type="text" ng-model="experience.responsibilities"></textarea>
             <hr>
@@ -76,7 +76,7 @@
             <h5> {{ education.institution }} </h5>
             GPA: <span ng-repeat="(type, gpa) in education.gpas"><span
                 ng-if="!$first">, </span>{{ gpa }} ({{ type }})</span>
-            <div ng-bind-html-unsafe="education.achievements | markdown"></div>
+            <p ng-bind-html-unsafe="education.achievements | markdown"></p>
         </div>
     </div>
 </div>
@@ -107,11 +107,11 @@
             <!--<h5> {{ project.tagLine }} </h5>-->
             <h5><a ng-href="{{ project.homepage }}" target="_blank">Project Homepage</a></h5>
 
-            <div ng-bind-html-unsafe="project.description | markdown"></div>
+            <p ng-bind-html-unsafe="project.description | markdown"></p>
 
-            <h5> Contribution </h5>
+            <h5 ng-show="project.contribution"> Contribution </h5>
 
-            <div ng-bind-html-unsafe="project.contribution | markdown"></div>
+            <p ng-bind-html-unsafe="project.contribution | markdown"></p>
         </div>
     </div>
 </div>
