@@ -1,0 +1,118 @@
+<div class="row-fluid aboutMe">
+    <div class="span2 offset1">
+        <img src="{{ resume.avatar }}" class="img-polaroid avatar">
+    </div>
+    <div class="span8">
+        <div class="row-fluid">
+            <div class="span8">
+                <h1> {{ resume.firstName }} {{ resume.lastName }} </h1>
+
+                <h3> {{ resume.experiences[0].title | uppercase }} </h3>  <!-- todo capitalize -->
+            </div>
+            <div class="span4">
+                <span style="float: right; text-align: right">
+                    <a href="mailto:{{resume.email}}" target="_blank">{{ resume.email }}</a> <br> {{ resume.phone }} <br>
+                    <!-- {{ resume.website }} -->
+                </span>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12">
+                <p ng-bind-html-unsafe="resume.summary | markdown"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="row" ng-repeat="experience in resume.experiences" ng-class-odd="'odd'"> -->
+<div class="row-fluid" style="padding-top: 20px">
+    <div class="span2 offset1">
+        <span style="float: left">
+            <h3 class="into-margin"> EXPERIENCE </h3>
+        </span>
+    </div>
+    <div class="span8">
+        <div class="entry experience" ng-repeat="experience in resume.experiences">
+            <span class="pull-right"> {{ experience.start }} - {{ experience.current ? 'current' : experience.end }} </span>
+            <h4> {{ experience.title }} </h4>
+            <ul class="tags pull-right">
+                <li ng-repeat="technology in experience.technologies">
+                    <h6><span ng-if="!$first" class="separator">·</span> {{ technology }}</h6></li>
+            </ul>
+            <h5> {{ experience.company }} </h5>
+
+            <p ng-bind-html-unsafe="experience.summary"></p>
+
+            <p ng-click="experience.editing = !experience.editing" ng-hide="experience.editing" ng-bind-html-unsafe="experience.responsibilities | markdown"></p>
+            <textarea ng-blur="experience.editing = !experience.editing" ng-show="experience.editing" type="text" ng-model="experience.responsibilities"></textarea>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span10 offset1">
+        <hr>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 offset1">
+        <span style="float: left">
+            <h3 class="into-margin"> EDUCATION </h3>
+        </span>
+    </div>
+    <div class="span8">
+        <div class="entry education" ng-repeat="education in resume.educations">
+            <span class="pull-right"> {{ education.start }} - {{ experience.current ? 'current' : education.end }} </span>
+            <h4> {{ education.degree }} </h4>
+            <!-- <ul class="tags">
+                <li ng-repeat="course in education.courses">
+                    <h6><span ng-if="!$first">·</span> {{ course }}</h6></li>
+            </ul> -->
+            <h5> {{ education.institution }} </h5>
+            GPA: <span ng-repeat="(type, gpa) in education.gpas"><span ng-if="!$first">, </span>{{ gpa }} ({{ type }})</span>
+            <p ng-bind-html-unsafe="education.achievements | markdown"></p>
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span10 offset1">
+        <hr>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 offset1">
+        <span style="float: left">
+            <h3 class="into-margin"> PROJECTS </h3>
+        </span>
+    </div>
+    <div class="span8">
+        <div class="entry project" ng-repeat="project in resume.projects">
+            <span class="pull-right"> {{ project.start }} - {{ project.current ? 'current' : project.end }} </span>
+
+            <h4> {{ project.name }} </h4>
+
+            <ul class="tags pull-right">
+                <li ng-repeat="technology in project.technologies">
+                    <h6><span ng-if="!$first" class="separator">·</span> {{ technology }}</h6></li>
+            </ul>
+
+            <!--<h5> {{ project.tagLine }} </h5>-->
+            <h5><a ng-href="{{ project.homepage }}" target="_blank">Project Homepage</a></h5>
+
+            <p ng-bind-html-unsafe="project.description | markdown"></p>
+
+            <h5 ng-show="project.contribution"> Contribution </h5>
+
+            <p ng-bind-html-unsafe="project.contribution | markdown"></p>
+        </div>
+    </div>
+</div>
+
+<footer class="row-fluid">
+    <div class="span10 offset1">
+        <a class="pull-right" ng-click="editMode = !editMode">toggle admin</a>
+    </div>
+</footer>
