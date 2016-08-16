@@ -1,0 +1,30 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "private": true,
+  "description": "My resume as a web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node app.js"
+  },
+  "author": "Tim Nunamaker <tim@timnunamaker.com>",
+  "jspm": {
+    "dependencies": {
+      "less": "npm:systemjs-less-plugin@^1.8.3",
+      "react": "npm:react@^15.3.0",
+      "react-dom": "npm:react-dom@^15.3.0",
+      "remarkable": "npm:remarkable@^1.6.2"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-plugin-transform-react-jsx": "npm:babel-plugin-transform-react-jsx@^6.8.0",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  },
+  "dependencies": {
+    "koa": "^1.2.1",
+    "koa-static": "^2.0.0"
+  }
+}
